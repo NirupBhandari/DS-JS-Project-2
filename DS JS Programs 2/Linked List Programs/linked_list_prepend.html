@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Prepend</title>
+</head>
+
+<body>
+    <h1>Linked List Prepend Operation In Javascript</h1>
+    <h2>Results shown in Developer Console</h2>
+    <script>
+        class LinkedList {
+            constructor(data) {
+                this.head = {
+                    value: data,
+                    next: null
+                }
+                this.tail = this.head
+                this.length = 1;
+            }
+            append(data) {
+                const newNode = {
+                    value: data,
+                    next: null
+                }
+                this.tail.next = newNode;
+                this.tail = newNode;
+                this.length++
+            }
+
+            prepend(data) {
+                const newNode = {
+                    value: data,
+                    next: null
+                }
+                newNode.next = this.head
+                this.head = newNode
+            }
+        }
+
+        const myList = new LinkedList(10)
+        myList.append(20)
+        myList.append(30)
+        myList.append(40)
+        myList.append(50)
+        myList.prepend(60)
+        console.log(myList);
+    </script>
+</body>
+
+</html>

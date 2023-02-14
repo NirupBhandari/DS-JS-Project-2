@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sorting</title>
+</head>
+
+<body>
+    <h2>Bubble sort program to sort all the elements of an array into
+        a descending order</h2>
+    <script>
+        function swap(arr, first_Index, second_Index) {
+            var temp = arr[first_Index];
+            arr[first_Index] = arr[second_Index];
+            arr[second_Index] = temp;
+        }
+
+        function bubble_Sort(arr) {
+
+            var len = arr.length,
+                i, j, stop;
+
+            for (i = 0; i < len; i++) {
+                for (j = 0, stop = len - i; j < stop; j++) {
+                    if (arr[j + 1] > arr[j]) {
+                        swap(arr, j + 1, j);
+                    }
+                }
+            }
+
+            return arr;
+        }
+        document.write(bubble_Sort([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 1000, 2000, 3000, 4000, 5000]));
+    </script>
+</body>
+
+</html>
